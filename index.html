@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Строительные и Ремонтные работы</title>
+  <link rel="stylesheet" href="../Remont/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../Remont/Images/FAVICONS/180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Remont/Images/FAVICONS/32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../Remont/Images/FAVICONS/16x16.png">
+  <link rel="manifest" href="../Remont/Images/FAVICONS/site.webmanifest">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" role="banner" aria-label="Основное меню">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo" tabindex="0">Строительные и Ремонтные работы</div>
+        <nav>
+          <ul class="menu cf" role="menubar">
+            <li role="none"><a href="#" role="menuitem" tabindex="0">Главная</a></li>
+            <li role="none"><a href="../Remont/projects.html" role="menuitem" tabindex="-1">Проекты</a></li>
+            <li role="none" aria-haspopup="true" aria-expanded="false">
+              <a href="#section" role="menuitem" tabindex="-1" aria-controls="submenu">Услуги</a>
+              <ul class="submenu" id="submenu" role="menu" aria-label="Преимущества">
+                <li role="none"><a href="#features" role="menuitem" tabindex="-1">Преимущества</a></li>
+              </ul>
+            </li>
+            <li role="none"><a href="../Remont/contacts.html" role="menuitem" tabindex="-1">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro" id="intro" aria-label="Вступительная информация">
+    <div class="container">
+      <div class="intro__inner">
+        <h1 class="intro__title">Мы уже более 15 лет ремонтируем и строим в Москве и Области</h1>
+        <p class="intro__subtitle">
+          Наша компания зарекомендовала себя, как ответственный и надёжный исполнитель
+          ремонтно-строительных работ. Наше преимущество в том, что мы работаем с заводами напрямую.
+          Мы выполняем ремонтные работы в квартире, офисе или загородном доме, коммерческих помещениях,
+          капитальный или косметический ремонт, строим каркасные дома, пристройки, террасы -
+          наши специалисты готовы выполнять работы любой сложности.
+        </p>
+      </div>
+      <div class="marquee-container" aria-label="Контактные телефоны">
+        <p class="marquee">Наши контакты: Андрей +7(991)110-2402 , Константин +7(989)579-5811</p>
+      </div>
+      <a href="#" title="Наверх" class="footer-up" aria-label="Наверх">
+        <div class="footer-ics"></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Ремонтные услуги -->
+  <section class="section" id="section" aria-label="Ремонтные услуги">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="section__title">Ремонтные услуги</h2>
+        <p class="section__subtitle">
+          Большой опыт и постоянная практика позволяют нам успешно реализовывать все требования заказчиков.<br>
+          В результате обращения к нам вы полностью отстраняетесь от участия (кроме контроля), экономя свои время и деньги.<br>
+          Мы предоставляем исчерпывающий комплекс услуг:
+        </p>
+      </header>
+
+      <div class="works works--repair" role="list">
+        <article class="works__item" role="listitem">
+          <img src="../Remont/Images/Works/SERVICE/2.jpg" alt="Косметический, стандартный и капитальный ремонт" class="works__photo">
+          <div class="works__content">
+            <h3 class="works__title">Мы делаем:</h3>
+            <p class="works__text">
+              Косметический ремонт;<br>
+              Стандартный ремонт;<br>
+              Капитальный ремонт (Под ключ).
+            </p>
+          </div>
+        </article>
+
+        <article class="works__item" role="listitem">
+          <img src="../Remont/Images/Works/SERVICE/3.jpg" alt="Электрические, сантехнические и отделочные работы" class="works__photo">
+          <div class="works__content">
+            <h3 class="works__title">Ремонтные работы:</h3>
+            <p class="works__text">
+              Электрические работы;<br>
+              Сантехника;<br>
+              Механизированная штукатурка;<br>
+              Полусухая стяжка;<br>
+              Механизированная шпатлёвка;<br>
+              Обои и покраска;<br>
+              Отопление;<br>
+              Монтаж дверей;<br>
+              Укладка плитки;<br>
+              Декоративные изделия из ГКЛ.
+            </p>
+          </div>
+        </article>
+
+        <article class="works__item" role="listitem">
+          <img src="../Remont/Images/Works/SERVICE/1.jpg" alt="Ремонт квартир, офисов, загородных домов" class="works__photo">
+          <div class="works__content">
+            <h3 class="works__title">Любые помещения:</h3>
+            <p class="works__text">
+              Квартиры, комнаты;<br>
+              Офисы, студии;<br>
+              Загородные дома;<br>
+              Коммерческие помещения.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Строительные услуги -->
+  <section class="section" id="construction" aria-label="Строительные услуги">
+    <div class="container">
+      <header class="section__header">
+        <h2 class="section__title">Строительные услуги</h2>
+        <p class="section__subtitle">
+          Наша компания, уже более 15 лет осуществляет строительство промышленных зданий, каркасных домов из блока,
+          пристроек, террасс.<br>
+          Мы выполняем работы с фундаментом, кровлей, монтаж окон и дверей.<br>
+          Наши специалисты готовы выполнить работы любой сложности.
+        </p>
+      </header>
+
+      <div class="works works--construction" role="list">
+        <article class="works__item" role="listitem">
+          <img src="../Remont/Images/Works/SERVICE/4.jpg" alt="Строительно-монтажные работы, каркасные дома, пристройки, террасы" class="works__photo">
+          <div class="works__content">
+            <h3 class="works__title">
+              Строительно-Монтажные работы<br>
+              Строим каркасные дома, пристройки, террасы.
+            </h3>
+            <p class="works__text">
+              Перечень работ:<br>
+              земляные: устройство котлованов, засыпка грунтом, подготовка стройплощадки<br>
+              бетонные: устройство свай, бетонирование или кладка оснований, фундаментов, цоколей<br>
+              монтажные: кладка несущих стен, возведение опорных колонн, устройство перекрытий, монтаж кровли и т.д.<br>
+              специальные: прокладка и монтаж инженерных систем, включая электропроводку, освещение, вентиляцию, водоснабжение и канализацию
+            </p>
+          </div>
+        </article>
+        <article class="works__item" role="listitem">
+          <img src="../Remont/Images/Works/SERVICE/5.jpg" alt="Реконструкция и отделочные работы" class="works__photo">
+          <div class="works__content">
+            <h3 class="works__title">Строительно-Отделочные работы.</h3>
+            <p class="works__text">
+              Реконструкция действующих объектов, включая полную или частичную реорганизацию рабочих процессов.<br>
+              Ремонтные работы в квартире, офисе или загородном доме, коммерческих помещениях.<br>
+              При необходимости выполняется перепланировка помещений с перераспределением основных и вспомогательных площадей.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Преимущества -->
+  <section class="container" id="features" aria-label="Наши преимущества">
+    <header class="features__header">
+      <h3 class="features__subtitle">Наши преимущества</h3>
+      <h2 class="features__title">
+        Мы работаем с заводами напрямую, именно поэтому выбирают нас.<br>
+        Качество материалов и сертификация всегда в наличии.
+      </h2>
+    </header>
+
+    <div class="features" role="list">
+      <article class="features__item" role="listitem">
+        <img class="features__icon" src="../Remont/Images/ICONS/icons1.png" alt="Строгое соблюдение сроков">
+        <h4 class="features__title">Строгое соблюдение сроков</h4>
+        <p class="features__text">
+          В ходе многолетней работы с заказчиками отточены все технологические процессы строительства,
+          оптимизирована очередь выполнения работ, многие не пересекающиеся работы выполняются параллельно.
+          В нашем штате работают исключительно опытные и квалифицированные мастера.
+        </p>
+      </article>
+
+      <article class="features__item" role="listitem">
+        <img class="features__icon" src="../Remont/Images/ICONS/icons3.png" alt="Приемлемая стоимость и гибкие условия оплаты">
+        <h4 class="features__title">Приемлемая стоимость и гибкие условия оплаты</h4>
+        <p class="features__text">
+          Наше предложение одно из лучших на рынке по показателю цена / качество. Условия оплаты обсуждаются.
+        </p>
+      </article>
+
+      <article class="features__item" role="listitem">
+        <img class="features__icon" src="../Remont/Images/ICONS/icons2.png" alt="Огромный опыт специалистов">
+        <h4 class="features__title">Огромный опыт</h4>
+        <p class="features__text">
+          Для отделочных и строительных работ привлекаются только специалисты с опытом от 5 лет.
+          Есть опыт работы на самых разных объектах: от офисов и складов до банковских помещений и объектов с требованиями к безопасности.
+          Качество работы отмечено благодарностями крупнейших клиентов.
+        </p>
+      </article>
+
+      <article class="features__item" role="listitem">
+        <img class="features__icon" src="../Remont/Images/ICONS/icons4.png" alt="Единая ответственность и гарантия качества">
+        <h4 class="features__title">Единая ответственность и гарантия</h4>
+        <p class="features__text">
+          Если проект требует привлечения узкоспециализированных субподрядчиков,
+          сотрудничаем с проверенными партнерами и на 100% несем ответственность за качество и оперативность их работы.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo" aria-label="Футер сайта">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__block">
+          <h4 class="footer__title">Ремонт Квартир</h4>
+          <p class="footer__text">
+            Стандартный ремонт<br>
+            Ремонт бизнес-класса<br>
+            Капитальный ремонт<br>
+            Ремонт в новостройке<br>
+            Косметический ремонт<br>
+            Ремонт отдельных комнат
+          </p>
+        </div>
+        <div class="footer__block">
+          <h4 class="footer__title">Ремонтные работы</h4>
+          <p class="footer__text">
+            Ремонт коммерческих помещений<br>
+            Инженерные сети<br>
+            Отделочные работы<br>
+            Электромонтажные работы<br />
+            Благоустройство территории<br>
+            Алюминиевые теплицы
+          </p>
+        </div>
+        <div class="footer__block">
+          <h4 class="footer__title">Строительные работы</h4>
+          <p class="footer__text">
+            Земельные работы<br>
+            Свайные работы<br>
+            Каменные работы<br>
+            Монтаж конструкций<br>
+            Кровельные работы<br>
+            Отделочные работы
+          </p>
+        </div>
+        <div class="footer__block">
+          <h4 class="footer__title">Тел. номер</h4>
+          <p class="footer__text">
+            +7(991)110-2402<br>
+            +7(989)579-5811
+          </p>
+          <h4 class="footer__title">Наш EMAIL</h4>
+          <p class="footer__text">marsavinvladimirovich@mail.ru</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <div class="container">
+        <p class="copyright__text">
+          © 2023 ИП БЕЛИКОВ А.В. All Rights Reserved<br>
+          Made <span>by Fokin Eugene</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
