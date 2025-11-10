@@ -1,64 +1,70 @@
-html, body {
+html {
     height: 100%;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace, sans-serif;
-    font-size: 14px;
-    -webkit-font-smoothing: antialiased;
 }
 
 body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-size: 14px;
     color: #fff;
     background-color: #fff;
     position: relative;
-    /* note: color и background-color на белом фоне — цвет #fff делает текст невидимым, возможно, стоит поправить */
+
 }
 
-/* Универсальная модель коробки */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-/* Сброс отступов для заголовков */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
-/* Очистка float */
-.cf::before, .cf::after {
-    content: "";
-    display: table;
-}
-.cf::after {
-    clear: both;
-}
-.cf {
-    zoom: 1; /* для IE6/7 */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
 }
 
-/* Контейнер */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0px 20px;
     overflow: hidden;
-    width: 100%;
+
+
+
 }
 
 /* Меню */
 .menu {
     list-style: none;
-    margin: 50px;
-    width: fit-content;
+    width: 100%;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.menu > li {
-    position: relative; /* Нужно для абсолютного подменю */
-    float: left;
+
+.menu>li {
+    position: relative;
     background: #34495e;
     opacity: 0.9;
     transform: skewX(25deg);
+    margin: 0 4px;
+    transition: background 0.2s;
+    float: left;
 }
-.menu > li > a {
+
+.menu>li>a {
     display: block;
     color: #fff;
     text-transform: uppercase;
@@ -67,32 +73,37 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1em 2em;
     transform: skewX(-25deg);
 }
-.menu > li:hover {
+
+.menu>li:hover {
     background: #ffdd10;
+    color: #2d3033;
 }
 
 /* Подменю */
 .submenu {
     position: absolute;
-    top: 100%; /* Показывать под меню */
-    left: 0; /* Начинать слева у родителя */
-    width: 200%; /* На всю ширину родителя */
-    height: 100%;
+    top: 100%;
+    left: 0;
+    width: 200%;
+    background: #34495e;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    background: #34495e;
+    transition: opacity 0.2s, visibility 0.2s;
     list-style: none;
-    
+    z-index: 10;
+}
+
+.menu>li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
 }
 
 .submenu li {
-    float: left;
-    width: 100%; /* или конкретную ширину, если нужно */
+    width: 100%;
     background-color: inherit;
-    transform: none;
 }
-.submenu > li > a {
+
+.submenu>li>a {
     display: block;
     color: #fff;
     text-transform: uppercase;
@@ -100,31 +111,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     padding: 1em 2em;
 }
-/* неявные nth-child стили объединил с общими классами для оптимизации */
-.submenu > li:nth-child(odd) {
-    transform: none;
-}
 
-.submenu > li:nth-child(odd) > a {
-    transform: none;
-}
-
-.submenu > li:nth-child(even) {
-    transform: none;
-}
-
-.submenu > li:nth-child(even) > a {
-    transform: none;
-}
-
-.menu > li:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-}
-.menu > li:hover .submenu li:nth-child(even) {
+.menu>li:hover .submenu li:nth-child(even) {
     transform: skewX(25deg) translateX(15px);
 }
-.menu > li:hover .submenu li:nth-child(odd) {
+
+.menu>li:hover .submenu li:nth-child(odd) {
     transform: skewX(-25deg) translateX(-15px);
 }
 
@@ -136,46 +128,51 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     z-index: 1000;
 }
+
 .header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #fff;
+
 }
+
 .header__logo {
     font-size: 25px;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
 /* Intro */
 .intro {
-    height: 680px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url(Images/yellow-tools-frame-with-copy-space.png) no-repeat center / cover;
+    background: url(Images/yellow-tools-frame-with-copy-space.png) no-repeat center/cover;
+    text-align: center;
 }
+
 .intro__inner {
     max-width: 960px;
-    margin: 150px 100px 0;
-    text-align: center;
+    margin: 150px auto 0;
     border-bottom: 2px solid #fff;
+    text-align: center;
 }
+
 .intro__title {
     font-size: 40px;
-    line-height: 1.1;
-    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0;
+    color: #fff;
 }
+
 .intro__subtitle {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-size: 18px;
     color: #fff;
-    line-height: 1.1;
+    text-transform: uppercase;
     padding: 10px;
     font-weight: 700;
-    text-transform: uppercase;
 }
 
 /* Marquee */
@@ -183,9 +180,11 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     overflow: hidden;
+    justify-content: center;
 }
+
 .marquee {
-    font-size: 50px;
+    font-size: 32px;
     line-height: 1.1;
     padding: 18px 0;
     font-weight: 700;
@@ -193,67 +192,80 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     animation: marquee 20s linear infinite;
 }
+
 .marquee::after {
     content: "Наши контакты: Андрей +7(991)110-2402 , Константин +7(989)579-5811";
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-70%);
+    }
 }
 
 /* Кнопка "Наверх" */
 .footer-up {
     position: fixed;
-    top: 90%;
-    left: 90%;
+    bottom: 32px;
+    right: 24px;
     width: 70px;
     height: 70px;
-    margin: 0 auto;
     border-radius: 50%;
     cursor: pointer;
     background-color: #fff;
-    border: 5px solid rgba(255,255,255,0.9);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-50%, -50%);
     z-index: 1001;
+    transform: none;
 }
+
 .footer-ics {
-    width: 70px;
-    height: 50px;
-    padding: 18px;
-    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
     position: relative;
 }
+
 .footer-ics::before,
 .footer-ics::after {
     content: '';
     position: absolute;
+    left: 10px;
     box-sizing: border-box;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-left: 8px solid #2d3033;
     border-bottom: 8px solid #3d3033;
     animation: animate 4s linear infinite;
 }
+
 .footer-ics::after {
     animation-delay: -2s;
 }
+
 @keyframes animate {
     0% {
         opacity: 0;
         transform: translateY(18px) rotate(135deg);
     }
-    10%, 90% {
+
+    10%,
+    90% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
         transform: translateY(0) rotate(135deg);
     }
+
     100% {
         opacity: 0;
         transform: translateY(-18px) rotate(135deg);
@@ -263,16 +275,18 @@ h1, h2, h3, h4, h5, h6 {
 /* Секции */
 .section__header {
     max-width: 1200px;
-    margin: 0 auto 50px;
+    margin: 0 auto 48px;
     text-align: center;
 }
+
 .section__title {
     font-size: 40px;
-    padding: 25px;
+    padding: 18px;
     color: #2d3033;
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .section__subtitle {
     font-size: 18px;
     color: #333;
@@ -284,7 +298,9 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     justify-content: center;
 }
-.works__item, .works__item1 {
+
+.works__item,
+.works__item1 {
     font-family: inherit;
     position: relative;
     overflow: hidden;
@@ -292,18 +308,17 @@ h1, h2, h3, h4, h5, h6 {
     border-right: 2px solid #fff;
     transition: opacity 0.2s linear;
 }
+
 .works__item {
     width: 33.3333%;
     height: 300px;
 }
+
 .works__item1 {
     width: 50%;
     height: 400px;
 }
-.works__item:hover .works__content,
-.works__item1:hover .works__content {
-    opacity: 0.9;
-}
+
 .works__photo {
     width: 100%;
     height: 100%;
@@ -314,6 +329,7 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover;
     z-index: 1;
 }
+
 .works__content {
     display: flex;
     flex-direction: column;
@@ -328,6 +344,12 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     z-index: 2;
 }
+
+.works__item:hover .works__content,
+.works__item1:hover .works__content {
+    opacity: 0.9;
+}
+
 .works__title {
     margin-bottom: 5px;
     font-size: 20px;
@@ -335,8 +357,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-transform: uppercase;
 }
+
 .works__text {
-    font-size: 15px;
+    font-size: 12px;
     color: #fff;
     text-transform: uppercase;
 }
@@ -347,32 +370,38 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     margin: 0;
 }
+
 .features__header {
     max-width: 1100px;
     margin: 0 auto 50px;
     text-align: center;
 }
+
 .features__item {
     width: 50%;
     padding: 0 40px;
     margin: 25px 0;
     text-align: center;
 }
+
 .features__icon {
     margin-bottom: 25px;
 }
+
 .features__subtitle {
     padding: 25px;
     font-size: 40px;
     color: #333;
 }
+
 .features__title {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     font-size: 18px;
     color: #2d3033;
     font-weight: 700;
     text-transform: uppercase;
 }
+
 .features__text {
     font-size: 18px;
     line-height: 1.5;
@@ -384,17 +413,19 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
     background-color: #2d3033;
 }
+
 .footer__inner {
-    font-family: inherit;
     display: flex;
     flex-wrap: wrap;
     padding: 70px 0;
 }
+
 .footer__block {
     width: 25%;
     padding: 0 15px;
     text-align: center;
 }
+
 .footer__title {
     margin-bottom: 10px;
     font-size: 14px;
@@ -402,31 +433,114 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-transform: uppercase;
 }
+
 .footer__text {
     font-size: 14px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Copyright */
 .copyright {
     padding: 20px 0;
     background-color: #333;
     text-align: center;
 }
+
 .copyright__text {
     font-size: 14px;
-    line-height: 1.5;
     color: #808080;
 }
+
 .copyright__text span {
     color: #fff;
 }
 
-/* Адаптивность */
+
+/* Медиа-запросы */
 @media (max-width: 1300px) {
     .works__item {
         width: 50%;
     }
 }
-@media (max-width: 991px
+
+@media (max-width: 991px) {
+    body {
+        padding: 0 6px;
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+    }
+
+    .works__item,
+    .works__item1 {
+        width: 100%;
+    }
+
+    .features__item,
+    .footer__block {
+        width: 100%;
+    }
+
+    .header__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header__logo {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container {
+        padding: 0 5px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .works,
+    .features,
+    .footer__inner {
+        flex-direction: column;
+    }
+
+    .works__item,
+    .works__item1 {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-up {
+        right: 10vw;
+        width: 44px;
+        height: 44px;
+    }
+
+    .intro__title,
+    .section__title {
+        font-size: 22px;
+    }
+
+    .intro__subtitle,
+    .section__subtitle {
+        font-size: 14px;
+    }
+}
