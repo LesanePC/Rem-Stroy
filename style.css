@@ -9,6 +9,7 @@ body {
     color: #fff;
     background-color: #fff;
     position: relative;
+    -webkit-font-smoothing: antialiased;
 
 }
 
@@ -39,12 +40,22 @@ ol {
     margin: 0 auto;
     padding: 0px 20px;
     overflow: hidden;
-
-
-
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
 }
 
-/* Меню */
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* Меню с skew сохраняется */
 .menu {
     list-style: none;
     width: 100%;
@@ -65,7 +76,8 @@ ol {
 }
 
 .menu>li>a {
-    display: block;
+    display: flex;
+    
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -144,7 +156,7 @@ ol {
 
 /* Intro */
 .intro {
-    min-height: 400px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,7 +165,7 @@ ol {
 }
 
 .intro__inner {
-    max-width: 960px;
+    max-width: 100vw;
     margin: 150px auto 0;
     border-bottom: 2px solid #fff;
     text-align: center;
@@ -458,10 +470,7 @@ ol {
 
 /* Медиа-запросы */
 @media (max-width: 1300px) {
-    .works__item {
-        width: 50%;
-    }
-}
+    
 
 @media (max-width: 991px) {
     body {
@@ -475,48 +484,21 @@ ol {
         padding-bottom: 32px;
     }
 
-    .menu {
-        flex-wrap: wrap;
-    }
-
-    .works__item,
-    .works__item1 {
-        width: 100%;
-    }
-
     .features__item,
     .footer__block {
         width: 100%;
     }
 
-    .header__inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
 
-    .header__logo {
-        margin-bottom: 15px;
-    }
 }
 
 @media (max-width: 480px) {
-    .header__inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    
 
     .container {
         padding: 0 5px;
     }
 
-    .menu {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .works,
     .features,
     .footer__inner {
         flex-direction: column;
@@ -533,10 +515,10 @@ ol {
         width: 44px;
         height: 44px;
     }
-
     .intro__title,
     .section__title {
         font-size: 22px;
+        
     }
 
     .intro__subtitle,
