@@ -30,7 +30,7 @@ ul, ol {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cf:before, .cf:after {
@@ -77,7 +77,8 @@ ul, ol {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    margin: 0;
+    padding: 0;
 }
 
 .menu > li {
@@ -86,8 +87,15 @@ ul, ol {
     border-radius: 8px;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 4px 15px rgba(52,73,94,0.3);
+    overflow: visible;
+}
+.menu > li:not([aria-haspopup="true"]) {
+    margin-right: 8px;
 }
 
+.menu > li[aria-haspopup="true"] {
+    margin-right: 8px;
+}
 .menu > li > a {
     display: block;
     color: #fff;
@@ -102,7 +110,6 @@ ul, ol {
 
 .menu > li:hover {
     background: linear-gradient(135deg, #ffdd10, #fff);
-    transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(255,221,16,0.4);
 }
 
@@ -112,48 +119,50 @@ ul, ol {
     text-shadow: 0 2px 4px rgba(52,73,94,0.3);
 }
 
-/* Submenu */
 .submenu {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 240px;
+    left: 50%;
+    width: calc(100% + 50px);
+    margin-top: 4px;
     background: linear-gradient(135deg, #34495e, #2d3033);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-15px);
+    transform: translateY(-10px);
     transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
     list-style: none;
-    z-index: 10;
+    z-index: 1000;
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    border-radius: 0 0 12px 12px;
-}
-
-.menu > li:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    border-radius: 8px;
 }
 
 .submenu li {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1px solid rgba(255,255,255,0.1);
 }
 
 .submenu > li > a {
-    padding: 18px 24px;
+    padding: 14px 24px;
     font-size: 14px;
     transition: all 0.3s ease;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
+    display: block;
+    
 }
 
 .submenu > li:hover > a {
-    background: rgba(255,221,16,0.2);
-    padding-left: 32px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(52,73,94,0.3);
     color: #ffdd10;
+    
 }
-
+.menu > li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    
+}
 /* Intro */
 .intro {
     min-height: 100vh;
@@ -513,7 +522,7 @@ ul, ol {
 
 .footer-ics {
     width: 35px;
-    height: 35px;
+    height: 20px;
     position: relative;
 }
 

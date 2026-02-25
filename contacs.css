@@ -115,48 +115,7 @@ ul, ol {
     text-shadow: 0 2px 4px rgba(52,73,94,0.3);
 }
 
-/* Submenu */
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 240px;
-    background: linear-gradient(135deg, #34495e, #2d3033);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-15px);
-    transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-    z-index: 10;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    border-radius: 0 0 12px 12px;
-    margin: 0;
-    padding: 0;
-}
 
-.menu > li:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.submenu li {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.submenu > li > a {
-    padding: 18px 24px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-.submenu > li:hover > a {
-    background: rgba(255,221,16,0.2);
-    padding-left: 32px;
-    color: #ffdd10;
-}
 
 /* Contacts */
 .contacts {

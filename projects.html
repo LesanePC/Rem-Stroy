@@ -7,7 +7,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="Images/FAVICONS/180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Images/FAVICONS/32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/FAVICONS/16x16.png">
-    <link rel="manifest" href="Images/FAVICONS/site.webmanifest">
     <title>Remont - Проекты</title>
 </head>
 
@@ -21,12 +20,6 @@
                     <ul class="menu cf" role="menubar">
                         <li role="none"><a href="index.html" role="menuitem" tabindex="0">Главная</a></li>
                         <li role="none"><a href="projects.html" role="menuitem" tabindex="-1">Проекты</a></li>
-                        <li role="none" aria-haspopup="true" aria-expanded="false">
-                            <a href="#section" role="menuitem" tabindex="-1" aria-controls="submenu">Услуги</a>
-                            <ul class="submenu" id="submenu" role="menu" aria-label="Услуги">
-                                <li role="none"><a href="#features" role="menuitem" tabindex="-1">Преимущества</a></li>
-                            </ul>
-                        </li>
                         <li role="none"><a href="contacts.html" role="menuitem" tabindex="-1">Контакты</a></li>
                     </ul>
                 </nav>
@@ -88,8 +81,6 @@
         </div>
     </section>
 
-    
-
     <!-- Ремонтные работы -->
     <div class="container">
         <div class="section__header">
@@ -100,9 +91,17 @@
         </div>
     </div>
 
+    <!-- Фильтры галереи -->
+    <div class="gallery-filters" style="padding: 20px 0; text-align: center;">
+        <button class="filter-btn active" data-filter="all">Все работы</button>
+        <button class="filter-btn" data-filter="prep">Подготовка</button>
+        <button class="filter-btn" data-filter="final">Готово</button>
+    </div>
+
+    <!-- Галерея -->
     <div class="gallery-image">
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/1.jpg" alt="Подготовительные работы" loading="lazy">
+        <div class="img-box" data-category="prep">
+            <img src="Images/Works/Preparation1.jpg" alt="Этап подготовки" loading="lazy">
             <div class="transparent-box">
                 <div class="caption">
                     <p>Подготовительные</p>
@@ -110,8 +109,29 @@
                 </div>
             </div>
         </div>
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/2.jpg" alt="Готовая работа" loading="lazy">
+        
+        <div class="img-box" data-category="prep">
+            <img src="Images/Works/Preparation2.jpg" alt="Этап подготовки" loading="lazy">
+            <div class="transparent-box">
+                <div class="caption">
+                    <p>Подготовительная работа</p>
+                    <p class="opacity-low">Работа</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="img-box" data-category="prep">
+            <img src="Images/Works/Preparation3.jpg" alt="Этап подготовки" loading="lazy">
+            <div class="transparent-box">
+                <div class="caption">
+                    <p>Этап</p>
+                    <p class="opacity-low">Подготовки</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="img-box" data-category="final">
+            <img src="Images/Works/room1.jpg" alt="Готовая работа" loading="lazy">
             <div class="transparent-box">
                 <div class="caption">
                     <p>Готовая</p>
@@ -120,17 +140,8 @@
             </div>
         </div>
         
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/3.jpg" alt="Этап подготовки" loading="lazy">
-            <div class="transparent-box">
-                <div class="caption">
-                    <p>Этап</p>
-                    <p class="opacity-low">Подготовки</p>
-                </div>
-            </div>
-        </div>
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/4.jpg" alt="Готовая работа" loading="lazy">
+        <div class="img-box" data-category="final">
+            <img src="Images/Works/room2.jpg" alt="Готовая работа" loading="lazy">
             <div class="transparent-box">
                 <div class="caption">
                     <p>Готовая</p>
@@ -138,17 +149,9 @@
                 </div>
             </div>
         </div>
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/2.jpg" alt="Готовая работа" loading="lazy">
-            <div class="transparent-box">
-                <div class="caption">
-                    <p>Готовая</p>
-                    <p class="opacity-low">Работа</p>
-                </div>
-            </div>
-        </div>
-        <div class="img-box">
-            <img src="Images/Works/PROJECTS2/3.jpg" alt="Этап подготовки" loading="lazy">
+        
+        <div class="img-box" data-category="final">
+            <img src="Images/Works/room3.jpg" alt="Готовая работа" loading="lazy">
             <div class="transparent-box">
                 <div class="caption">
                     <p>Этап</p>
@@ -206,5 +209,9 @@
     <div class="footer-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <div class="footer-ics"></div>
     </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="main.js"></script>
+<script src="projects.js"></script>
+
 </body>
 </html>
